@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Link shortner</title>
+    <link rel="stylesheet" href="Style.css"></link>
+</head>
+<body >
+    <script src="Script1.js" defer></script>
+    <div class="container">
+        <div class="card">
+    <div class="content">
+       <div class="Container-1">
+        <h1>
+            Url Shortner
+        </h1>
+         
+
+       <!--This wil be the fetch form thingy that will get the infpormatuon ofrom the user -->
+        <form id="form">
+            <input type="url" id="url-input" placeholder="Enter your Long URL here" required>
+            <button id="submit-btn" type="submit">Shorten URL</button>
+        </form>
+
+        <div id ="result" >
+            <p id="short-url">Shortened URL: <a href="_blank" id="shortened-url" target="_blank"></a>
+            
+                <i id="copy-btn" class="copy-icon">Copy</i> 
+            </p>
+            <!-- Basically now we need some kinda invisible button to tell the user that the information has been copied -->
+             <div id="copy-message" style="display: none;">Copied to clipboard!</div>
+             <!--And well if an error occurs we will display it here -->
+                <div id="error-message">
+
+                </div>
+            </div>
+
+        </div>
+       </div>
+
+            
+    </div>
+    </div>
+
+        
+    </div>
+
+    
+</body>
+</html>
