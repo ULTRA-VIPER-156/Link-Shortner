@@ -2,7 +2,7 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family: "monospace", monospace;
+  font-family: "ariels", monospace;
   
 }
 
@@ -31,27 +31,27 @@ html, body {
   background: #000000;
   background-image: radial-gradient(
       4px 100px at 0px 235px,
-      rgb(255, 140, 17),
+      rgb(41, 17, 255),
       #0000
     ),
     radial-gradient(4px 100px at 300px 235px, rgb(255, 119, 0), #884e2800),
     radial-gradient(
       1.5px 1.5px at 150px 117.5px,
-      rgb(255, 144, 9) 100%,
+      rgb(34, 9, 255) 100%,
       #0000 150%
     ),
     radial-gradient(4px 100px at 0px 252px, rgb(168, 27, 27), #0000),
     radial-gradient(4px 100px at 300px 252px, rgb(23, 41, 206), #0000),
     radial-gradient(
       1.5px 1.5px at 150px 126px,
-      rgb(247, 102, 18) 100%,
+      rgb(18, 33, 247) 100%,
       #0000 150%
     ),
     radial-gradient(4px 100px at 0px 150px, rgb(249, 16, 16), #0000),
     radial-gradient(4px 100px at 300px 150px, rgb(255, 128, 18), #0000),
     radial-gradient(
       1.5px 1.5px at 150px 75px,
-      rgb(255, 116, 10) 100%,
+      rgb(207, 14, 255) 100%,
       #0000 150%
     ),
   
@@ -59,35 +59,35 @@ html, body {
     radial-gradient(4px 100px at 300px 204px, rgb(126, 255, 6), #0000),
     radial-gradient(
       1.5px 1.5px at 150px 102px,
-      rgb(255, 128, 9) 100%,
+      rgb(9, 46, 255) 100%,
       #0000 150%
     ),
     radial-gradient(4px 100px at 0px 134px, rgb(249, 133, 9), #0000),
     radial-gradient(4px 100px at 300px 134px, rgb(251, 125, 15), #0000),
     radial-gradient(
       1.5px 1.5px at 150px 67px,
-      rgb(255, 146, 13) 100%,
+      rgb(13, 126, 255) 100%,
       #0000 150%
     ),
     radial-gradient(4px 100px at 0px 179px, rgb(249, 137, 17), #0000),
     radial-gradient(4px 100px at 300px 179px, rgb(253, 122, 6), #0000),
     radial-gradient(
       1.5px 1.5px at 150px 89.5px,
-      rgb(234, 132, 7) 100%,
+      rgb(7, 30, 234) 100%,
       #0000 150%
     ),
     radial-gradient(4px 100px at 0px 299px, rgb(255, 115, 0), #0000),
     radial-gradient(4px 100px at 300px 299px, rgb(255, 136, 0), #0000),
     radial-gradient(
       1.5px 1.5px at 150px 149.5px,
-      rgb(255, 123, 0) 100%,
+      rgb(14, 224, 252) 100%,
       #0000 150%
     ),
     radial-gradient(4px 100px at 0px 215px, rgb(255, 145, 0), #0000),
     radial-gradient(4px 100px at 300px 215px, rgb(255, 132, 0), #0000),
     radial-gradient(
       1.5px 1.5px at 150px 107.5px,
-      rgb(255, 136, 0) 100%,
+      rgb(4, 0, 255) 100%,
       #0000 150%
     ),
     radial-gradient(4px 100px at 0px 281px, rgb(255, 170, 0), #0000),
@@ -108,7 +108,8 @@ html, body {
     radial-gradient(4px 100px at 300px 210px, rgb(255, 162, 0), #0000),
     radial-gradient(
       1.5px 1.5px at 150px 105px,
-      rgb(255, 136, 0) 100%,
+      rgb(0, 0, 0) 100%,
+      
       #0000 150%
     );
   background-size:
@@ -243,8 +244,8 @@ z-index: 1;
   border-radius: 24px;
   overflow: hidden;
   color: #ffffff;
-  background: #16161a44;
-
+  background: #fffffffa;
+  color: #000000;   
   line-height: 1.6;
   border: 1px solid #999999;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
@@ -255,13 +256,11 @@ z-index: 1;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
-  color: #ffffff;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .content .heading {
   font-weight: 700;
-      color: #ffffff;
 
   font-size: 36px;
   line-height: 1.3;
@@ -284,7 +283,7 @@ z-index: 1;
   top: -5.2rem;
   width: 10.4rem;
   height: 10.4rem;
-  background: #f79d17;
+  background: #1b02ff57;
   z-index: 0;
   opacity: 0;
   
@@ -299,7 +298,7 @@ z-index: 1;
   bottom: -5.2rem;
   width: 10.4rem;
   height: 10.4rem;
-  background: #f79d17;
+  background: #1b02ff57;
   z-index: 0;
   opacity: 0;
   border-radius: 50%;
@@ -335,4 +334,159 @@ z-index: 1;
 
 {
     z-index: 1;
+}
+#url-input {
+  max-width: 190px;
+  padding: 15px;
+  font-size: 17px;
+  color: black;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+  border: 2px solid #fff;
+  margin-right: -10px;
+}
+
+ #submit-btn{
+  border: none;
+  background-color: #1363DF;
+  text-decoration: none;
+  padding: 15px;
+  padding-bottom: 17px;
+  font-size: 17px;
+  color: #fff;
+  border-top-right-radius: .5em;
+  border-bottom-right-radius: .5em;
+  cursor: pointer;
+}
+.Container-1
+{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.CopyStuff {
+    display: flex;
+    flex-direction: row;
+    
+}
+/* tooltip settings 👇 */
+
+.copy {
+  /* button */
+  --button-bg: #1363DF;
+  --button-hover-bg: #6b75ff;
+  --button-text-color: #474747;
+  --button-hover-text-color: #8bb9fe;
+  --button-border-radius: 10px;
+  --button-diameter: 60px;
+  --button-outline-width: 1px;
+  --button-outline-color: rgb(141, 141, 141);
+  /* tooltip */
+  --tooltip-bg: #f4f3f3;
+  --toolptip-border-radius: 4px;
+  --tooltip-font-family: Menlo, Roboto Mono, monospace;
+  /* 👆 this field should not be empty */
+  --tooltip-font-size: 12px;
+  /* 👆 this field should not be empty */
+  --tootip-text-color: rgb(50, 50, 50);
+  --tooltip-padding-x: 7px;
+  --tooltip-padding-y: 7px;
+  --tooltip-offset: 8px;
+  /* --tooltip-transition-duration: 0.3s; */
+  /* 👆 if you need a transition, 
+  just remove the comment,
+  but I didn't like the transition :| */
+}
+
+.copy {
+  box-sizing: border-box;
+  width: var(--button-diameter);
+  height: var(--button-diameter);
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-bg);
+  color: var(--button-text-color);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  visibility: 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font: var(--tooltip-font-size) var(--tooltip-font-family);
+  color: var(--tootip-text-color);
+  background: var(--tooltip-bg);
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  border-radius: var(--toolptip-border-radius);
+  pointer-events: none;
+  transition: all var(--tooltip-transition-duration)
+    cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip::before {
+  content: attr(data-text-initial);
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--tooltip-padding-y) / 2 * -1);
+  width: var(--tooltip-padding-y);
+  height: var(--tooltip-padding-y);
+  background: inherit;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  z-index: -999;
+  pointer-events: none;
+}
+
+.copy svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkmark {
+  display: none;
+}
+
+/* actions */
+
+.copy:hover .tooltip,
+.copy:focus:not(:focus-visible) .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: calc((100% + var(--tooltip-offset)) * -1);
+}
+
+.copy:focus:not(:focus-visible) .tooltip::before {
+  content: attr(data-text-end);
+}
+
+.copy:focus:not(:focus-visible) .clipboard {
+  display: none;
+}
+
+.copy:focus:not(:focus-visible) .checkmark {
+  display: block;
+}
+
+.copy:hover,
+.copy:focus {
+  background-color: var(--button-hover-bg);
+}
+
+.copy:active {
+  outline: var(--button-outline-width) solid var(--button-outline-color);
+}
+
+.copy:hover svg {
+  color: var(--button-hover-text-color);
 }
