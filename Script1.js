@@ -75,8 +75,28 @@ form.addEventListener("submit",async (e)=>{
     copyBtn.style.display="block";
     copyStuff.style.display="block";
     loader.style.display="none";
+
   }
 
   submitBtn.disabled=false;
   submitBtn.innerText="Shorten URL";
 });
+
+
+
+//Clip thingy 
+
+const copyButton = document.getElementById("copy-button");
+//Dont ask i stole it online somewhere 
+if (copyButton) {
+  copyButton.addEventListener("click",()=>{
+    copyTextToClipboard(shortendUrl.textContent);
+  });
+}
+
+function copyTextToClipboard(text) {
+  if (!navigator.clipboard) {
+    return;
+  }
+  navigator.clipboard.writeText(text);
+}
