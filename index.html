@@ -23,7 +23,7 @@
             Url Shortner
         </h1>
         
-            exactly as it ays the main purpose of this webapge is to shorten long urls into smaller more manageable links 
+            exactly as it says the main purpose of this webapge is to shorten long urls into smaller more manageable links 
             Why would a person use this instead of other websites ?
             absolutely no idea but hey its here for some reason i guess
         </p>
@@ -34,14 +34,15 @@
             <input type="url" id="url-input" placeholder="Enter your Long URL here" required>
             <button id="submit-btn" type="submit">Shorten URL</button>
         </form>
-
-        <div id ="result" >
-            <p id="short-url">Result: <a href="_blank" id="shortened-url" target="_blank"></a>
+            <p id="short-url" style="display:none">Result: <a href="_blank" id="shortened-url" target="_blank"></a>
             
                 <i id="copy-btn" class="copy-icon"></i> 
             </p>
-            <div classname="CopyStuff">
-               <div class="loader"></div>
+               <div class="LoaderHolder">
+               <div  id="loader" class="loader" style="display:none"></div>
+               </div>
+                 <div id="copy-Stuff" class="CopyStuff" style="display: none;">
+
                 <h2>
                     Copy
                 </h2>
@@ -50,21 +51,19 @@
                  </div>
                  <div class="Copy-Svg"> 
                     <button class="copy">
-  <span
-    class="tooltip"
-    data-text-initial="Copy to clipboard"
-    data-text-end="Copied!"
-  ></span>
-  <span>
-                    <svg id="Cp-Svg" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 256 256" fill="#000000"><g id="galaCopy0" fill="none" stroke="#000000" stroke-dasharray="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-width="16"><rect id="galaCopy1" width="144" height="144" x="16" y="16" ry="32"/><path id="galaCopy2" d="M 95.999712,127.9996 A 31.999891,31.999891 0 0 1 127.9996,95.999712"/><path id="galaCopy3" d="m -239.99922,127.9996 a 31.999891,31.999891 0 0 1 31.99989,-31.999888" transform="scale(-1 1)"/><path id="galaCopy4" d="m -239.99922,-207.99933 a 31.999891,31.999891 0 0 1 31.99989,-31.99989" transform="scale(-1)"/><path id="galaCopy5" d="M 95.999712,-207.99933 A 31.999891,31.999891 0 0 1 127.9996,-239.99922" transform="scale(1 -1)"/><path id="galaCopy6" stroke-opacity="1" d="m 159.99949,239.99923 h 15.99995"/><path id="galaCopy7" stroke-opacity="1" d="m 159.99949,95.9997 h 15.99995"/><path id="galaCopy8" stroke-opacity="1" d="m 95.999709,159.99949 v 15.99995"/><path id="galaCopy9" stroke-opacity="1" d="m 239.99923,159.99949 v 15.99995"/></g></svg>
+                    <span
+                        class="tooltip"
+                        data-text-initial="Copy to clipboard"
+                        data-text-end="Copied!"
+                    ></span>
+                    <span>
+                                        <svg id="Cp-Svg" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 256 256" fill="#000000"><g id="galaCopy0" fill="none" stroke="#000000" stroke-dasharray="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-width="16"><rect id="galaCopy1" width="144" height="144" x="16" y="16" ry="32"/><path id="galaCopy2" d="M 95.999712,127.9996 A 31.999891,31.999891 0 0 1 127.9996,95.999712"/><path id="galaCopy3" d="m -239.99922,127.9996 a 31.999891,31.999891 0 0 1 31.99989,-31.999888" transform="scale(-1 1)"/><path id="galaCopy4" d="m -239.99922,-207.99933 a 31.999891,31.999891 0 0 1 31.99989,-31.99989" transform="scale(-1)"/><path id="galaCopy5" d="M 95.999712,-207.99933 A 31.999891,31.999891 0 0 1 127.9996,-239.99922" transform="scale(1 -1)"/><path id="galaCopy6" stroke-opacity="1" d="m 159.99949,239.99923 h 15.99995"/><path id="galaCopy7" stroke-opacity="1" d="m 159.99949,95.9997 h 15.99995"/><path id="galaCopy8" stroke-opacity="1" d="m 95.999709,159.99949 v 15.99995"/><path id="galaCopy9" stroke-opacity="1" d="m 239.99923,159.99949 v 15.99995"/></g></svg>
 
-  </span>
-</button>
+                    </span>
+                    </button>
 
                  </div>
             </div>
-            <!-- Basically now we need some kinda invisible button to tell the user that the information has been copied -->
-             <div id="copy-message" style="display: none;">Copied to clipboard!</div>
              <!--And well if an error occurs we will display it here -->
                 <div id="error-message">
 
