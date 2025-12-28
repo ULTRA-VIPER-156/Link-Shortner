@@ -6,248 +6,120 @@ html, body {
   
 }
 
-.container {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  z-index: 0;
-}
-
-
-.container::before {
-  content: "";
-  position: absolute;
-  inset: -145%;
-  rotate: -45deg;
-  z-index: -1;
-
-  background: #000000;
-  background-image: radial-gradient(
-      4px 100px at 0px 235px,
-      rgb(41, 17, 255),
-      #0000
-    ),
-    radial-gradient(4px 100px at 300px 235px, rgb(255, 119, 0), #884e2800),
-    radial-gradient(
-      1.5px 1.5px at 150px 117.5px,
-      rgb(34, 9, 255) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 252px, rgb(168, 27, 27), #0000),
-    radial-gradient(4px 100px at 300px 252px, rgb(23, 41, 206), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 126px,
-      rgb(18, 33, 247) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 150px, rgb(249, 16, 16), #0000),
-    radial-gradient(4px 100px at 300px 150px, rgb(255, 128, 18), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 75px,
-      rgb(207, 14, 255) 100%,
-      #0000 150%
-    ),
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
   
-    radial-gradient(4px 100px at 0px 204px, rgb(234, 115, 18), #0000),
-    radial-gradient(4px 100px at 300px 204px, rgb(126, 255, 6), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 102px,
-      rgb(9, 46, 255) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 134px, rgb(249, 133, 9), #0000),
-    radial-gradient(4px 100px at 300px 134px, rgb(251, 125, 15), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 67px,
-      rgb(13, 126, 255) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 179px, rgb(249, 137, 17), #0000),
-    radial-gradient(4px 100px at 300px 179px, rgb(253, 122, 6), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 89.5px,
-      rgb(7, 30, 234) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 299px, rgb(255, 115, 0), #0000),
-    radial-gradient(4px 100px at 300px 299px, rgb(255, 136, 0), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 149.5px,
-      rgb(14, 224, 252) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 215px, rgb(255, 145, 0), #0000),
-    radial-gradient(4px 100px at 300px 215px, rgb(255, 132, 0), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 107.5px,
-      rgb(4, 0, 255) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 281px, rgb(255, 170, 0), #0000),
-    radial-gradient(4px 100px at 300px 281px, rgb(255, 115, 0), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 140.5px,
-      rgb(255, 119, 0) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 158px, rgb(255, 123, 0), #0000),
-    radial-gradient(4px 100px at 300px 158px, rgb(255, 132, 0), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 79px,
-      rgb(255, 149, 0) 100%,
-      #0000 150%
-    ),
-    radial-gradient(4px 100px at 0px 210px, rgb(255, 123, 0), #0000),
-    radial-gradient(4px 100px at 300px 210px, rgb(255, 162, 0), #0000),
-    radial-gradient(
-      1.5px 1.5px at 150px 105px,
-      rgb(0, 0, 0) 100%,
-      
-      #0000 150%
-    );
-  background-size:
-    300px 235px,
-    300px 235px,
-    300px 235px,
-    300px 252px,
-    300px 252px,
-    300px 252px,
-    300px 150px,
-    300px 150px,
-    300px 150px,
-    300px 253px,
-    300px 253px,
-    300px 253px,
-    300px 204px,
-    300px 204px,
-    300px 204px,
-    300px 134px,
-    300px 134px,
-    300px 134px,
-    300px 179px,
-    300px 179px,
-    300px 179px,
-    300px 299px,
-    300px 299px,
-    300px 299px,
-    300px 215px,
-    300px 215px,
-    300px 215px,
-    300px 281px,
-    300px 281px,
-    300px 281px,
-    300px 158px,
-    300px 158px,
-    300px 158px,
-    300px 210px,
-    300px 210px,
-    300px 210px;
-  animation: hi 150s linear infinite;
+  .card {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+  
+  .content {
+    gap: 20px;
+  }
+  
+  .Container-1 h1 {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  #url-input {
+    max-width: 100%;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px; 
+  }
+  
+  #submit-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+  
+  .CopyStuff {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .copy {
+    --button-diameter: 50px;
+  }
 }
 
-@keyframes hi {
-  0% {
-    background-position:
-      0px 220px,
-      3px 220px,
-      151.5px 337.5px,
-      25px 24px,
-      28px 24px,
-      176.5px 150px,
-      50px 16px,
-      53px 16px,
-      201.5px 91px,
-      75px 224px,
-      78px 224px,
-      226.5px 350.5px,
-      100px 19px,
-      103px 19px,
-      251.5px 121px,
-      125px 120px,
-      128px 120px,
-      276.5px 187px,
-      150px 31px,
-      153px 31px,
-      301.5px 120.5px,
-      175px 235px,
-      178px 235px,
-      326.5px 384.5px,
-      200px 121px,
-      203px 121px,
-      351.5px 228.5px,
-      225px 224px,
-      228px 224px,
-      376.5px 364.5px,
-      250px 26px,
-      253px 26px,
-      401.5px 105px,
-      275px 75px,
-      278px 75px,
-      426.5px 180px;
+@media (min-width: 769px) {
+  .container {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
   }
-  to {
-    background-position:
-      0px 6800px,
-      3px 6800px,
-      151.5px 6917.5px,
-      25px 13632px,
-      28px 13632px,
-      176.5px 13758px,
-      50px 5416px,
-      53px 5416px,
-      201.5px 5491px,
-      75px 17175px,
-      78px 17175px,
-      226.5px 17301.5px,
-      100px 5119px,
-      103px 5119px,
-      251.5px 5221px,
-      125px 8428px,
-      128px 8428px,
-      276.5px 8495px,
-      150px 9876px,
-      153px 9876px,
-      301.5px 9965.5px,
-      175px 13391px,
-      178px 13391px,
-      326.5px 13540.5px,
-      200px 14741px,
-      203px 14741px,
-      351.5px 14848.5px,
-      225px 18770px,
-      228px 18770px,
-      376.5px 18910.5px,
-      250px 5082px,
-      253px 5082px,
-      401.5px 5161px,
-      275px 6375px,
-      278px 6375px,
-      426.5px 6480px;
+
+  .card {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    padding: 86px;
+    border-radius: 24px;
+    overflow: hidden;
+    color: #ffffff;
+    background: #fffffffa;
+    color: #000000;   
+    line-height: 1.6;
+    border: 0.2px solid #999999;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
 }
+
+
+.container {
+  --bg: radial-gradient(#000 5%, #0000 6%);
+  --size: 3rem;
+  width: 100%;
+  height: 100%;
+  /* Add your background pattern here */
+  /* background-color: lightblue; */
+  background-image: radial-gradient(#000 5%, #0000 6%),
+    radial-gradient(#000 5%, #0000 6%);
+  background-position: 0 0, calc(var(--size) / 2) calc(var(--size) / 2);
+  background-size: var(--size) var(--size);
+}
+
 .card {
-z-index: 1;
+  flex:3;
+  z-index: 1;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45%;
-  height: 45%;
-  padding: 86px;
+  height: inherit;
+  margin-left: 8rem;
+  margin-right: 8rem;
+  padding: 96px;
   border-radius: 24px;
   overflow: hidden;
   color: #ffffff;
   background: #fffffffa;
   color: #000000;   
-  line-height: 1.6;
-  border: 1px solid #999999;
+
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -259,17 +131,42 @@ z-index: 1;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.navbar {
+  margin-bottom: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 0;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar li a:hover {
+  background-color: #f0f0f0;
+}
+
 
 
 
 
 .card:hover::before {
-  scale: 7;
+  scale: 2;
   opacity: 1;
 }
 
 .card:hover::after {
-  scale: 7;
+  scale: 2;
   opacity: 1;
 }
 
@@ -285,7 +182,7 @@ z-index: 1;
   box-shadow: 0rem 6px 13px rgba(0, 0, 0, 0.1),
     0rem 24px 24px rgba(0, 0, 0, 0.09), 0rem 55px 33px rgba(0, 0, 0, 0.05),
     0rem 97px 39px rgba(0, 0, 0, 0.01), 0rem 152px 43px rgba(0, 0, 0, 0);
-  border-color: #ff9d0a;
+  border-color: #fff5e7;
   scale: 1.05;
 }
 .Container-1
@@ -315,6 +212,16 @@ z-index: 1;
   border-top-right-radius: .5em;
   border-bottom-right-radius: .5em;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submit-btn:hover {
+  background-color: #0d4ea0;
+}
+
+#submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 .Container-1
 {
@@ -343,18 +250,15 @@ z-index: 1;
   --tooltip-bg: #f4f3f3;
   --toolptip-border-radius: 4px;
   --tooltip-font-family: Menlo, Roboto Mono, monospace;
-  /* 👆 this field should not be empty */
   --tooltip-font-size: 12px;
-  /* 👆 this field should not be empty */
   --tootip-text-color: rgb(50, 50, 50);
   --tooltip-padding-x: 7px;
   --tooltip-padding-y: 7px;
   --tooltip-offset: 8px;
-  /* --tooltip-transition-duration: 0.3s; */
-  /* 👆 if you need a transition, 
-  just remove the comment,
-  but I didn't like the transition :| */
+  --tooltip-transition-duration: 0.3s;
+ 
 }
+
 
 .copy {
   box-sizing: border-box;
@@ -489,3 +393,126 @@ z-index: 1;
     height: 4px;
   }
 }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+  
+  .card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    padding: 30px 20px !important;
+    border-radius: 16px !important;
+  }
+  
+  .content {
+    gap: 20px !important;
+  }
+  
+  .Container-1 h1 {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  #url-input {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 12px !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    margin-right: 0 !important;
+    border-radius: 8px !important;
+    border: 2px solid #ddd !important;
+  }
+  
+  #submit-btn {
+    padding: 12px 20px !important;
+    font-size: 16px !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+    border-radius: 8px !important;
+  }
+  
+  .CopyStuff {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
+  
+  .copy {
+    --button-diameter: 50px !important;
+  }
+  
+  /* Hide background animation on mobile for better performance */
+  .container::before {
+    display: none !important;
+  }
+  
+  /* Adjust card hover effects for touch devices */
+  .card:hover {
+    scale: none !important;
+  }
+  
+  .card:hover::before,
+  .card:hover::after {
+    scale: none !important;
+    opacity: 0 !important;
+  }
+}
+/* From Uiverse.io by Bodyhc */ 
+.Sitecontainer {
+ 
+}
+
+.prefix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff3f3;
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  width: 70px;
+  font-weight: 600;
+  padding: 10px;
+  background-color: #000000;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.myinput-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  font-weight: 500;
+  border: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0px 10px;
+  height: 100%;
+  width: 160px;
+  background-color: #ffffff;
+  font-size: 15px;
+}
+
+.link-icon {
+  font-size: 16px;
+  background-color: #fff;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10px;
+  border-radius: 0px 10px 10px 0px;
+  cursor: pointer;
+  position: relative;
+}
+
+
+
+
+

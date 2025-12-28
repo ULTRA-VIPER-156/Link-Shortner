@@ -9,6 +9,19 @@ const errorMsg = document.getElementById("error-message");
 const result = document.getElementById("short-url");
 const loader = document.getElementById("loader");
 const copyStuff = document.getElementById("copy-Stuff");
+const ResultaView = document.getElementById("ResultView");
+
+// Mobile optimizations
+if ('ontouchstart' in window) {
+  // Add touch feedback for mobile
+  submitBtn.addEventListener('touchstart', function() {
+    this.style.transform = 'scale(0.98)';
+  });
+  
+  submitBtn.addEventListener('touchend', function() {
+    this.style.transform = 'scale(1)';
+  });
+}
 //so basically the idea here is to make a request to tiny url using their api 
 //so what happens is we sen over our long url and tinyurl sends back a shortend url
 
@@ -75,6 +88,7 @@ form.addEventListener("submit",async (e)=>{
     copyBtn.style.display="block";
     copyStuff.style.display="block";
     loader.style.display="none";
+    ResultaView.style.display="block";
 
   }
 
@@ -95,8 +109,58 @@ if (copyButton) {
 }
 
 function copyTextToClipboard(text) {
-  if (!navigator.clipboard) {
-    return;
+  // Modern clipboard API
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      showCopyFeedback(true);
+    }).catch(() => {
+      fallbackCopyTextToClipboard(text);
+    });
+  } else {
+    // Fallback for older browsers
+    fallbackCopyTextToClipboard(text);
   }
-  navigator.clipboard.writeText(text);
+}
+
+function fallbackCopyTextToClipboard(text) {
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.position = "fixed";
+  textArea.style.left = "-999999px";
+  textArea.style.top = "-999999px";
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  
+  try {
+    const successful = document.execCommand('copy');
+    showCopyFeedback(successful);
+  } catch (err) {
+    showCopyFeedback(false);
+  }
+  
+  document.body.removeChild(textArea);
+}
+
+function showCopyFeedback(success) {
+  const tooltip = copyButton.querySelector('.tooltip');
+  if (tooltip) {
+    if (success) {
+      tooltip.setAttribute('data-text-end', 'Copied!');
+      tooltip.style.opacity = '1';
+      tooltip.style.visibility = 'visible';
+      setTimeout(() => {
+        tooltip.style.opacity = '0';
+        tooltip.style.visibility = 'hidden';
+      }, 2000);
+    } else {
+      tooltip.setAttribute('data-text-end', 'Copy failed');
+      tooltip.style.opacity = '1';
+      tooltip.style.visibility = 'visible';
+      setTimeout(() => {
+        tooltip.style.opacity = '0';
+        tooltip.style.visibility = 'hidden';
+      }, 2000);
+    }
+  }
 }
