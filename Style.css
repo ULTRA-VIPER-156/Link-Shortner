@@ -1,3 +1,50 @@
+/*Ngl should have defined custom themes a long long time ago */
+
+:root
+{
+
+--primaryColor:white;
+--secondPrimary-color:#1363DF;
+--secondPrimary-color-Light:#5069fa;
+--textColor:#000000;
+ --textColor: #000000;
+  --TextCompliment: #ffffff;
+  --textMuted: #555555;
+
+  /*This will be for the background */
+   --bgColor: #ffffff;
+  --cardColor: #fffffffa;
+  --hoverBg: #f0f0f0;
+   --borderColor: #d0d0d0;
+   --buttonHover: #0d4ea0;
+  --buttonDisabled: #cccccc;
+
+
+
+
+
+}
+/*Dark mode thingy */
+[data-theme="dark"] {
+  --primaryColor: #0f1115;
+
+  --bgColor: #0f1115;
+  --cardColor: #161a22;
+
+  --textColor: #eaeaea;
+  --TextCompliment: #000000;
+  --textMuted: #9aa0a6;
+
+  --borderColor: #2a2f3a;
+  --hoverBg: #1f2430;
+
+  --secondPrimary-color: #4c8dff;
+  --secondPrimary-color-Light: #7aa2ff;
+
+  --buttonHover: #2f6bff;
+  --buttonDisabled: #444444;
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -6,7 +53,7 @@ html, body {
   
 }
 
-/* Mobile-first responsive design */
+/* Mobile design */
 @media (max-width: 768px) {
   .container {
     padding: 20px;
@@ -80,11 +127,10 @@ html, body {
     padding: 86px;
     border-radius: 24px;
     overflow: hidden;
-    color: #ffffff;
-    background: #fffffffa;
-    color: #000000;   
+    color: var(--textColor);
+    background: var(--cardColor);
     line-height: 1.6;
-    border: 0.2px solid #999999;
+    border: 0.2px solid var(--hoverBg);
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
   }
 }
@@ -116,10 +162,9 @@ html, body {
   padding: 96px;
   border-radius: 24px;
   overflow: hidden;
-  color: #ffffff;
-  background: #fffffffa;
-  color: #000000;   
-
+  color:var(--textColor);
+  background: var(--bgColor);
+  color:var(--textColor);
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -133,6 +178,8 @@ html, body {
 
 .navbar {
   margin-bottom: 20px;
+    justify-content: space-between;
+    
 }
 
 .navbar ul {
@@ -145,7 +192,7 @@ html, body {
 
 .navbar li a {
   text-decoration: none;
-  color: #000;
+  color:var(--textColor);
   font-weight: bold;
   padding: 10px 15px;
   border-radius: 5px;
@@ -153,7 +200,7 @@ html, body {
 }
 
 .navbar li a:hover {
-  background-color: #f0f0f0;
+  background-color: var(--hoverBg)
 }
 
 
@@ -171,18 +218,18 @@ html, body {
 }
 
 .card:hover .content .heading {
-  color: #ffffff;
+  color:var(--textColor);
 }
 
 .card:hover .content .para {
-  color: #ffffff;
+  color:var(--textColor);
 }
 
 .card:hover {
   box-shadow: 0rem 6px 13px rgba(0, 0, 0, 0.1),
     0rem 24px 24px rgba(0, 0, 0, 0.09), 0rem 55px 33px rgba(0, 0, 0, 0.05),
     0rem 97px 39px rgba(0, 0, 0, 0.01), 0rem 152px 43px rgba(0, 0, 0, 0);
-  border-color: #fff5e7;
+  border-color: var(--hoverBg);
   scale: 1.05;
 }
 .Container-1
@@ -197,18 +244,18 @@ html, body {
   color: black;
   border-top-left-radius: .5em;
   border-bottom-left-radius: .5em;
-  border: 2px solid #fff;
+  border: 2px solid var(--borderColor);
   margin-right: -10px;
 }
 
  #submit-btn{
   border: none;
-  background-color: #1363DF;
-  text-decoration: none;
+  background-color:var(--secondPrimary-color);
   padding: 15px;
   padding-bottom: 17px;
   font-size: 17px;
-  color: #fff;
+  color:var(--textColor);
+  background-color: var(--secondPrimary-color);
   border-top-right-radius: .5em;
   border-bottom-right-radius: .5em;
   cursor: pointer;
@@ -216,11 +263,11 @@ html, body {
 }
 
 #submit-btn:hover {
-  background-color: #0d4ea0;
+  background-color: var(--secondPrimary-color-Light);
 }
 
 #submit-btn:disabled {
-  background-color: #ccc;
+  background-color: var(--borderColor);
   cursor: not-allowed;
 }
 .Container-1
@@ -234,10 +281,9 @@ html, body {
     flex-direction: row;
     
 }
-/* tooltip settings 👇 */
 
 .copy {
-  /* button */
+  /*These are variables for the tooltip  */
   --button-bg: #1363DF;
   --button-hover-bg: #6b75ff;
   --button-text-color: #474747;
@@ -246,7 +292,6 @@ html, body {
   --button-diameter: 60px;
   --button-outline-width: 1px;
   --button-outline-color: rgb(141, 141, 141);
-  /* tooltip */
   --tooltip-bg: #f4f3f3;
   --toolptip-border-radius: 4px;
   --tooltip-font-family: Menlo, Roboto Mono, monospace;
@@ -266,7 +311,7 @@ html, body {
   height: var(--button-diameter);
   border-radius: var(--button-border-radius);
   background-color: var(--button-bg);
-  color: var(--button-text-color);
+  color: var(--textMuted);
   border: none;
   cursor: pointer;
   position: relative;
@@ -361,7 +406,7 @@ html, body {
   background-color: currentColor;
   margin: 20px auto;
   position: relative;
-  color: blue;
+  color: var(--button-bg);
   animation: animloader 0.3s 0.3s linear infinite alternate;
 }
 
@@ -423,10 +468,10 @@ html, body {
     max-width: 100% !important;
     width: 100% !important;
     padding: 12px !important;
-    font-size: 16px !important; /* Prevents zoom on iOS */
+    font-size: 16px !important; 
     margin-right: 0 !important;
     border-radius: 8px !important;
-    border: 2px solid #ddd !important;
+    border: 2px solid var(--bgColor) !important;
   }
   
   #submit-btn {
@@ -447,12 +492,8 @@ html, body {
     --button-diameter: 50px !important;
   }
   
-  /* Hide background animation on mobile for better performance */
-  .container::before {
-    display: none !important;
-  }
+
   
-  /* Adjust card hover effects for touch devices */
   .card:hover {
     scale: none !important;
   }
@@ -463,23 +504,20 @@ html, body {
     opacity: 0 !important;
   }
 }
-/* From Uiverse.io by Bodyhc */ 
-.Sitecontainer {
- 
-}
+
 
 .prefix {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #fff3f3;
+  justify-contexnt: center;
+  color:var(--TextCompliment);
   font-size: 15px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   height: 100%;
   width: 70px;
   font-weight: 600;
   padding: 10px;
-  background-color: #000000;
+  background-color: var(--textColor);
   border-radius: 10px 0px 0px 10px;
 }
 
@@ -494,13 +532,13 @@ html, body {
   padding: 0px 10px;
   height: 100%;
   width: 160px;
-  background-color: #ffffff;
+  background-color: var(--bgColor);
   font-size: 15px;
 }
 
 .link-icon {
   font-size: 16px;
-  background-color: #fff;
+  background-color: var(--bgColor);
   height: 100%;
   width: 40px;
   display: flex;
@@ -514,5 +552,44 @@ html, body {
 
 
 
+/* From Uiverse.io by luigimiraglia */
+.button_settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  height: 36px;
+  width: 120px;
+  border: none;
+  overflow:hidden;
+  background: black;
+  border-radius: 20px;
+  cursor: pointer;
+}
 
+.lable_settings {
+  line-height: 20px;
+  font-size: 17px;
+  color: white;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+
+.button_settings:hover {
+  background: grey;
+}
+
+.button_settings:hover .svg-icon_settings {
+  animation: spin_settings 2s linear infinite;
+}
+
+@keyframes spin_settings {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
