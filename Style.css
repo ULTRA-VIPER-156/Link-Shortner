@@ -593,3 +593,54 @@ html, body {
   }
 }
 
+/* From Uiverse.io by vaibhavchandranv */ 
+.button-c1 {
+  font-family: Inter, sans-serif;
+  cursor: pointer;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 100px;
+  transition: all 0.5s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-c1:hover {
+  scale: 1.1;
+}
+
+.button-c1:active {
+  scale: 1;
+}
+
+.button-c1:hover .icon {
+  fill: #ffff00;
+  scale: 1.1;
+  rotate: 360deg;
+  filter: drop-shadow(0 0 5px rgba(255, 208, 0, 0.8))
+    drop-shadow(0 0 10px rgba(255, 208, 0, 0.6));
+}
+
+.button-c1:hover .text {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+}
+
+.text {
+  transition: all 1s ease;
+}
+
+.icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-top: -3px;
+  transition: all 1s ease;
+}
+
+
