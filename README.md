@@ -23,7 +23,7 @@
     height="200" 
     alt="profile" 
     src="https://github.com/user-attachments/assets/c195ba68-fb05-4926-b828-4542e48c0e69"
-    style="border-radius: 50%; object-fit: cover;"
+    style="border-radius: 80%; object-fit: cover;"
   />
 </p>
 </p>
