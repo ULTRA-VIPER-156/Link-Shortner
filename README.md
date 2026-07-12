@@ -14,9 +14,7 @@
     Creator ---- Ultra viper (thats me btw )
   </h2>
   <br>
-  <h3>
-    Inspired by Subaru Natsuki 
-  </h3>
+ 
 <p align="center">
   <img 
     width="200" 
