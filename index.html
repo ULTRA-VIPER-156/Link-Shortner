@@ -67,14 +67,7 @@
                 </h2>
 
                 <div class="Copy-Svg" id="ResultView " style="display: none;">
-                            <div class="Sitecontainer" style="margin-top: 1rem;
-                            display:flex; justify-content: center;
-                            align-items: center;">
-                    <span class="prefix">http://</span>
-                    <input class="myinput-link" placeholder="Site.com" />
-                    <span class="link-icon">
-                        🔗
-                    </span>
+                          
                     </div>  
                  </div>
                                             
@@ -86,7 +79,182 @@
 
              <!--And well if an error occurs we will display it here -->
                 <div id="error-message">
+<style>
+.btn-copy {
+  --button-bg: #353434;
+  --button-hover-bg: #464646;
+  --button-text-color: #cccccc;
+  --button-hover-text-color: #8bb9fe;
+  --button-border-radius: 10px;
+  --button-diameter: 36px;
+  --button-outline-width: 1px;
+  --button-outline-color: rgb(141, 141, 141);
+  --tooltip-bg: #f4f3f3;
+  --toolptip-border-radius: 4px;
+  --tooltip-font-family: Menlo, Roboto Mono, monospace;
+  --tooltip-font-size: 12px;
+  --tootip-text-color: rgb(50, 50, 50);
+  --tooltip-padding-x: 7px;
+  --tooltip-padding-y: 7px;
+  --tooltip-offset: 8px;
+}
 
+.btn-copy {
+  box-sizing: border-box;
+  width: var(--button-diameter);
+  height: var(--button-diameter);
+  border-radius: var(--button-border-radius);
+  background: var(--button-bg);
+  color: var(--button-text-color);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+
+.btn-copy > .cp-tooltip {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font: var(--tooltip-font-size) var(--tooltip-font-family);
+  color: var(--tootip-text-color);
+  background: var(--tooltip-bg);
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  border-radius: var(--toolptip-border-radius);
+  pointer-events: none;
+}
+
+.btn-copy > .cp-tooltip::before {
+  content: attr(data-text-initial);
+}
+
+.btn-copy > .cp-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--tooltip-padding-y) / 2 * -1);
+  width: var(--tooltip-padding-y);
+  height: var(--tooltip-padding-y);
+  background: inherit;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.btn-copy svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cp-check-mark {
+  display: none;
+}
+
+.btn-copy:hover .cp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: calc((100% + var(--tooltip-offset)) * -1);
+}
+
+.btn-copy.copied .cp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: calc((100% + var(--tooltip-offset)) * -1);
+}
+
+.btn-copy.copied .cp-tooltip::before {
+  content: attr(data-text-end);
+}
+
+.btn-copy.copied .cp-clipboard {
+  display: none;
+}
+
+.btn-copy.copied .cp-check-mark {
+  display: block;
+}
+
+.btn-copy:hover,
+.btn-copy.copied {
+  background: var(--button-hover-bg);
+}
+
+.btn-copy:hover svg,
+.btn-copy.copied svg {
+  color: var(--button-hover-text-color);
+}
+
+.btn-copy:active {
+  outline: var(--button-outline-width) solid var(--button-outline-color);
+}
+</style>
+</head>
+
+<body>
+
+<button class="btn-copy" data-copy="Hello from the copy button!">
+  <span
+    class="cp-tooltip"
+    data-text-initial="Copy to clipboard"
+    data-text-end="Copied!"
+  ></span>
+
+  <span>
+    <svg
+      class="cp-clipboard"
+      viewBox="0 0 6.35 6.35"
+      width="20"
+      height="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill="currentColor"
+        d="M2.43.265c-.3 0-.548.236-.573.53h-.328a.74.74 0 0 0-.735.734v3.822a.74.74 0 0 0 .735.734H4.82a.74.74 0 0 0 .735-.734V1.529a.74.74 0 0 0-.735-.735h-.328a.58.58 0 0 0-.573-.53zm0 .529h1.49c.032 0 .049.017.049.049v.431c0 .032-.017.049-.049.049H2.43c-.032 0-.05-.017-.05-.049V.843c0-.032.018-.05.05-.05zm-.901.53h.328c.026.292.274.528.573.528h1.49a.58.58 0 0 0 .573-.529h.328a.2.2 0 0 1 .206.206v3.822a.2.2 0 0 1-.206.205H1.53a.2.2 0 0 1-.206-.205V1.529a.2.2 0 0 1 .206-.206z"
+      />
+    </svg>
+
+    <svg
+      class="cp-check-mark"
+      viewBox="0 0 24 24"
+      width="18"
+      height="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill="currentColor"
+        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
+      />
+    </svg>
+  </span>
+</button>
+
+<script>
+document.querySelectorAll(".btn-copy").forEach(button => {
+  button.addEventListener("click", async () => {
+    const text = button.dataset.copy;
+
+    try {
+      await navigator.clipboard.writeText(text);
+
+      button.classList.add("copied");
+
+      clearTimeout(button.copyTimeout);
+
+      button.copyTimeout = setTimeout(() => {
+        button.classList.remove("copied");
+      }, 2000);
+    } catch {
+      alert("Clipboard access failed.");
+    }
+  });
+});
+</script>
+
+</body>
                 </div>
             </div>
             
